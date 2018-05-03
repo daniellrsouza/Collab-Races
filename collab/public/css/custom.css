@@ -1,0 +1,9 @@
+.banner {
+    background: url('../img/banner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    margin: 20px auto 40px;
+}

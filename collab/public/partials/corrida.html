@@ -1,0 +1,32 @@
+<div class="container">
+    <form name="formulario" ng-submit="submeter()" class="form">
+        <h2>Corrida</h2>
+        <p class="alert alert-success" ng-show="mensagem.length">{{mensagem}}</p>
+        <hr class="my-4">
+        <div class="row">            
+            <div class="form-group col-md-5">
+                <label for="">Motorista</label>
+                <select name="motorista" ng-model="corrida.motorista._id" ng-options="motorista._id as (motorista.nome) for motorista in motoristas" class="form-control" required>
+                    <option value="">Selecione o motorista</option>
+                </select>
+            </div>
+            
+            <div class="form-group col-md-5">
+                <label for="">Passageiro</label>
+                <select name="passageiro" ng-model="corrida.passageiro._id" ng-options="passageiro._id as (passageiro.nome) for passageiro in passageiros" class="form-control" required>
+                    <option value="">Selecione o passageiro</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="">Valor</label>
+                <input class="form-control" ng-model="corrida.valor" type="number" step="any" name="valor" placeholder="R$" required>           
+            </div>
+
+            <div class="form-group col-md-2">
+                <button class="btn btn-success">Salvar</button>
+                <a href="/" class="btn btn-primary">Voltar</a>
+            </div> 
+        </div>
+    </form>
+</div>

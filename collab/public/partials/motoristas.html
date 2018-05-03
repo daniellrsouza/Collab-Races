@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="container">
+        <div class="row">
+            <h2>Lista de motoristas</h2>
+        </div>
+        
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-btn">
+                        <a href="/motoristas/new" class="btn btn-primary">Cadastrar</a>
+                </span>
+                <input class="form-control" type="text" ng-model="filtro" placeholder="Filtrar motoristas">  
+            </div>
+        </div>
+        
+        <div class="clearfix"><br></div>
+
+        <div class="row">
+            <table class="table table-bordered table-responsive-md">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th>CPF</th>
+                        <th>Modelo do carro</th>
+                        <th>Status</th>
+                        <th>Sexo</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="motorista in motoristas | filter: filtro">
+                        <td>{{motorista.nome}}</td>
+                        <td>{{motorista.data_nscto | date : 'dd/MM/yyyy'}}</td>
+                        <td>{{motorista.cpf}}</td>
+                        <td>{{motorista.modelo}}</td>
+                        <td>{{motorista.status}}</td>
+                        <td>{{motorista.sexo}}</td>
+                        <td><a class="btn btn-link" href="/motoristas/edit/{{motorista._id}}">Editar</a></td>
+                        <td><button class="btn btn-link" ng-click="remover(motorista)">Excluir</button></td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+              
+    </div>
+    
+</div>

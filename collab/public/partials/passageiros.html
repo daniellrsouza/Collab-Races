@@ -1,0 +1,46 @@
+<div class="container">
+        <div class="container">
+            <div class="row">
+                <h2>Lista de passageiros</h2>
+            </div>
+            
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <a href="/passageiros/new" class="btn btn-primary">Cadastrar</a>
+                    </span>
+                    <input class="form-control" type="text" ng-model="filtro" placeholder="Filtrar passageiros">  
+                </div>
+            </div>
+            
+            <div class="clearfix"><br></div>
+    
+            <div class="row">
+                <table class="table table-bordered table-responsive-md">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Data de Nascimento</th>
+                            <th>CPF</th>
+                            <th>Sexo</th>
+                            <th>Editar</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="passageiro in passageiros | filter: filtro">
+                            <td>{{passageiro.nome}}</td>
+                            <td>{{passageiro.data_nscto | date : 'dd/MM/yyyy'}}</td>
+                            <td>{{passageiro.cpf}}</td>
+                            <td>{{passageiro.sexo}}</td>
+                            <td><a class="btn btn-link" href="/passageiros/edit/{{passageiro._id}}">Editar</a></td>
+                            <td><button class="btn btn-link" ng-click="remover(passageiro)">Excluir</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+                  
+        </div>
+        
+    </div>

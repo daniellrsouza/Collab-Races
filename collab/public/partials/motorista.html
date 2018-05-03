@@ -1,0 +1,47 @@
+<div class="container">
+    <form name="formulario" ng-submit="submeter()" class="form">
+        <h2>{{motorista.nome}}</h2>
+        <p class="alert alert-success" ng-show="mensagem.length">{{mensagem}}</p>
+        <hr class="my-4">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="">Nome</label>
+                <input class="form-control" ng-model="motorista.nome" type="text" name="nome" placeholder="Nome do motorista..." required>
+            </div>
+            
+            <div class="form-group col-md-6">
+                <label for="">Data de Nascimento</label>
+                <input class="form-control" ng-model="motorista.data_nscto" type="date" name="data_nscto" required>
+            </div>
+            
+            <div class="form-group col-md-6">
+                <label for="">CPF</label>
+                <input class="form-control" ng-model="motorista.cpf" type="text" name="cpf" placeholder="CPF do motorista..." required>
+            </div>
+                    
+            <div class="form-group col-md-6">
+                <label for="">Modelo do carro</label>
+                <input class="form-control" ng-model="motorista.modelo" type="text" name="modelo" placeholder="Modelo do carro..." required>           
+            </div>
+            
+            <div class="form-group col-md-6">
+                <label for="">Status</label>
+                <select name="status" ng-model="motorista.status" ng-options="s.nome as (s.nome) for s in status" class="form-control" required>
+                    <option value="">Selecione o status</option>
+                </select>
+            </div>
+            
+            <div class="form-group col-md-6">
+                <label for="">Sexo</label>
+                <select name="sexo" ng-model="motorista.sexo" ng-options="s.nome as (s.nome) for s in sexo" class="form-control" required>
+                    <option value="">Selecione o sexo</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-2">
+                <button class="btn btn-success">Salvar</button>
+                <a href="/motoristas" class="btn btn-primary">Voltar</a>
+            </div> 
+        </div>
+    </form>
+</div>
